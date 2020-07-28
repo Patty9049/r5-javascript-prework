@@ -1,17 +1,18 @@
-function getMoveName(randomNumber, playerInput){
-  if(randomNumber, playerInput == 1) {
-    printMessage('kamień');
-  } else if (randomNumber, playerInput  == 2) {
-    printMessage('papier');
-  } else if (randomNumber, playerInput  == 3) {
-    printMessage('nożyce');
+function getMoveName(moveNumber){
+    if(moveNumber == 1) {
+    return('kamień');
+  } else if (moveNumber == 2) {
+    return('papier');
+  } else if (moveNumber == 3) {
+    return('nożyce');
   } else {
     printMessage('Nie znam ruchu o id ' + randomNumber + '.');
+console.log(typeof randomNumber);
     return 'nieznany ruch';
   }
 }
-function displayResult(argComputerMove,argPlayerMove){
-if( computerMove == 'kamień' && playerMove == 'papier'){
+function displayResult(computerMove, playerMove){
+  if ( computerMove == 'kamień' && playerMove == 'papier'){
   printMessage('Ty wygrywasz!');
 } else if ( computerMove == 'papier' && playerMove == 'nożyce'){
   printMessage('Ty wygrywasz!');
@@ -26,7 +27,7 @@ if( computerMove == 'kamień' && playerMove == 'papier'){
 } else {
   printMessage('Przegrana. Spróbuj jeszcze raz:(')
 }
-
+}
 let randomNumber = Math.floor(Math.random() * 3 + 1);
 
 console.log('Wylosowana liczba to: ' + randomNumber);
@@ -43,25 +44,4 @@ let playerMove = getMoveName(playerInput) ;
 
 printMessage('Twój ruch to: ' + playerMove);
 
-let computerMove = argComputerMove
-
-let playerMove = argPlayerMove
-
-let displayResult
-
-/*
-if( computerMove == 'kamień' && playerMove == 'papier'){
-  printMessage('Ty wygrywasz!');
-} else if ( computerMove == 'papier' && playerMove == 'nożyce'){
-  printMessage('Ty wygrywasz!');
-} else if ( computerMove == 'nożyce' && playerMove == 'kamień'){
-  printMessage('Ty wygrywasz!');
-} else if( computerMove == 'kamień' && playerMove == 'kamień'){
-  printMessage('Remis. Zagraj jeszcze raz.');
-} else if ( computerMove == 'papier' && playerMove == 'papier'){
-  printMessage('Remis. Zagraj jeszcze raz.');
-} else if ( computerMove == 'nożyce' && playerMove == 'nożyce'){
-  printMessage('Remis. Zagraj jeszcze raz.');
-} else {
-  printMessage('Przegrana. Spróbuj jeszcze raz:(')
-}*/
+displayResult(computerMove, playerMove)
