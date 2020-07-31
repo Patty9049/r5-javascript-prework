@@ -1,3 +1,4 @@
+{
 function playGame(playerInput){
 	clearMessages()
 	function getMoveName(moveNumber){
@@ -30,19 +31,18 @@ function playGame(playerInput){
 	    printMessage('Przegrana. Spróbuj jeszcze raz:(')
 	  }
 	}
-	let randomNumber = Math.floor(Math.random() * 3 + 1);
+	const randomNumber = Math.floor(Math.random() * 3 + 1);
 
 	console.log('Wylosowana liczba to: ' + randomNumber);
 
-	let computerMove = getMoveName(randomNumber) ;
+	const computerMove = getMoveName(randomNumber) ;
 
 	printMessage('Mój ruch to: ' + computerMove);
 
-	// let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
 
 	console.log('Gracz wpisał: ' + playerInput);
 
-	let playerMove = getMoveName(playerInput) ;
+	const playerMove = getMoveName(playerInput) ;
 
 	printMessage('Twój ruch to: ' + playerMove);
 
@@ -58,4 +58,4 @@ document.getElementById('play-paper').addEventListener('click', function(){
 document.getElementById('play-scissors').addEventListener('click', function(){
   playGame(3);
 });
-
+}
