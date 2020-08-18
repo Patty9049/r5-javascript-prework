@@ -1,4 +1,26 @@
 {
+const rock = 'kamień';
+      paper = 'papier';
+      scissors = 'nożyce';
+
+const displayResult = function(computerMove, playerMove){
+            if ( computerMove == 'rock' && playerMove == 'paper'){
+            printMessage('Ty wygrywasz!');
+          } else if ( computerMove == 'paper' && playerMove == 'scissors'){
+            printMessage('Ty wygrywasz!');
+          } else if ( computerMove == 'scissors' && playerMove == 'rock'){
+            printMessage('Ty wygrywasz!');
+          } else if( computerMove == 'rock' && playerMove == 'rock'){
+            printMessage('Remis. Zagraj jeszcze raz.');
+          } else if ( computerMove == 'paper' && playerMove == 'paper'){
+            printMessage('Remis. Zagraj jeszcze raz.');
+          } else if ( computerMove == 'scissors' && playerMove == 'scissors'){
+            printMessage('Remis. Zagraj jeszcze raz.');
+          } else {
+            printMessage('Przegrana. Spróbuj jeszcze raz:(')
+          }
+        }
+
 const playGame = function(playerInput){
 	clearMessages()
 
@@ -8,11 +30,11 @@ const playGame = function(playerInput){
 
 	const getMoveName = function(moveNumber){
 	    if(moveNumber == 1) {
-	    return('kamień');
+	    return('rock');
 	  } else if (moveNumber == 2) {
-	    return('papier');
+	    return('paper');
 	  } else if (moveNumber == 3) {
-	    return('nożyce');
+	    return('scissors');
 	  } else {
 	    printMessage('Nie znam ruchu o id ' + randomNumber + '.');
 	console.log(typeof randomNumber);
@@ -31,23 +53,6 @@ const playGame = function(playerInput){
 
         printMessage('Twój ruch to: ' + playerMove);
 
-	const displayResult = function(computerMove, playerMove){
-	    if ( computerMove == 'kamień' && playerMove == 'papier'){
-	    printMessage('Ty wygrywasz!');
-	  } else if ( computerMove == 'papier' && playerMove == 'nożyce'){
-	    printMessage('Ty wygrywasz!');
-	  } else if ( computerMove == 'nożyce' && playerMove == 'kamień'){
-	    printMessage('Ty wygrywasz!');
-	  } else if( computerMove == 'kamień' && playerMove == 'kamień'){
-	    printMessage('Remis. Zagraj jeszcze raz.');
-	  } else if ( computerMove == 'papier' && playerMove == 'papier'){
-	    printMessage('Remis. Zagraj jeszcze raz.');
-	  } else if ( computerMove == 'nożyce' && playerMove == 'nożyce'){
-	    printMessage('Remis. Zagraj jeszcze raz.');
-	  } else {
-	    printMessage('Przegrana. Spróbuj jeszcze raz:(')
-	  }
-	}
 	displayResult()
 }
 
@@ -61,3 +66,4 @@ document.getElementById('play-scissors').addEventListener('click', function(){
   playGame(3);
 });
 }
+
