@@ -2,19 +2,22 @@
 const rock = 'kamień';
       paper = 'papier';
       scissors = 'nożyce';
+      computerMove = getMoveName(randomNumber);
+      playerMove = getMoveName(playerInput) ;
+
 
 const displayResult = function(computerMove, playerMove){
-            if ( computerMove == 'rock' && playerMove == 'paper'){
+            if ( computerMove == rock && playerMove == paper){
             printMessage('Ty wygrywasz!');
-          } else if ( computerMove == 'paper' && playerMove == 'scissors'){
+          } else if ( computerMove == paper && playerMove == scissors){
             printMessage('Ty wygrywasz!');
-          } else if ( computerMove == 'scissors' && playerMove == 'rock'){
+          } else if ( computerMove == scissors && playerMove == rock){
             printMessage('Ty wygrywasz!');
-          } else if( computerMove == 'rock' && playerMove == 'rock'){
+          } else if( computerMove == rock && playerMove == rock){
             printMessage('Remis. Zagraj jeszcze raz.');
-          } else if ( computerMove == 'paper' && playerMove == 'paper'){
+          } else if ( computerMove == paper && playerMove == paper){
             printMessage('Remis. Zagraj jeszcze raz.');
-          } else if ( computerMove == 'scissors' && playerMove == 'scissors'){
+          } else if ( computerMove == scissors && playerMove == scissors){
             printMessage('Remis. Zagraj jeszcze raz.');
           } else {
             printMessage('Przegrana. Spróbuj jeszcze raz:(')
@@ -30,11 +33,11 @@ const playGame = function(playerInput){
 
 	const getMoveName = function(moveNumber){
 	    if(moveNumber == 1) {
-	    return('rock');
+	    return(rock);
 	  } else if (moveNumber == 2) {
-	    return('paper');
+	    return(paper);
 	  } else if (moveNumber == 3) {
-	    return('scissors');
+	    return(scissors);
 	  } else {
 	    printMessage('Nie znam ruchu o id ' + randomNumber + '.');
 	console.log(typeof randomNumber);
@@ -42,14 +45,14 @@ const playGame = function(playerInput){
 	  }
 	}
 
-	const computerMove = getMoveName(randomNumber) ;
+	//const computerMove = getMoveName(randomNumber) ;
 
         printMessage('Mój ruch to: ' + computerMove);
 
 
         console.log('Gracz wpisał: ' + playerInput);
 
-        const playerMove = getMoveName(playerInput) ;
+        //const playerMove = getMoveName(playerInput) ;
 
         printMessage('Twój ruch to: ' + playerMove);
 
